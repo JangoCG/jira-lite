@@ -4,7 +4,7 @@ import { color, sizes, font, mixin } from '../../shared/utils/styles';
 
 export const Container = styled.div`
   position: fixed;
-  z-index: 100;
+  z-index: 40;
   top: 0;
   left: ${sizes.appNavBarLeftWidth}px;
   height: 100vh;

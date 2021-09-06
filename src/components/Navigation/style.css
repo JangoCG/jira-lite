@@ -1,0 +1,21 @@
+.navbarItem {
+  @apply flex items-center w-full h-11 leading-10 pl-16 text-gray-100 transition-colors cursor-pointer select-none hover:bg-gray-100 hover:bg-opacity-10;
+}
+
+.navbarItemIcon {
+  @apply absolute left-5 text-white text-xl;
+}
+
+.navbarText {
+  @apply right-3 
+  invisible
+  opacity-0 
+  transition-all 
+  text-xs
+  font-medium
+  text-gray-200 
+  mr-4
+  group-hover:visible 
+  group-hover:opacity-100
+  uppercase;
+}

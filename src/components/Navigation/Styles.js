@@ -83,7 +83,7 @@ export const ItemText = styled.aside`
   transition: all 0.1s;
   transition-property: right, visibility, opacity;
   ${font.size(15)}
-  #navigation:hover & {
+  #navbar:hover & {
     right: 0;
     visibility: visible;
     opacity: 1;
