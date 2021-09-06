@@ -1,29 +1,15 @@
 import React from 'react';
-import {
-  Divider,
-  LinkItem,
-  LinkText,
-  NotImplemented,
-  ProjectInfo,
-  ProjectName,
-  ProjectTexts,
-  Container,
-} from './Styles';
-
-interface indexProps {}
-
-export const Sidebar: React.FC<indexProps> = ({}) => {
+import './Style.css';
+interface NavigationProps {}
+export const Sidebar: React.FC<NavigationProps> = ({}) => {
   return (
-    <Container>
-      <ProjectInfo>
-        <ProjectTexts>
-          <ProjectName>tesadasdasdt</ProjectName>
-        </ProjectTexts>
-      </ProjectInfo>
-      <Divider />
-
-      <p>asdad</p>
-      <h3>adasd</h3>
-    </Container>
+    <div className="sidebar">
+      <div className="projectInfo">
+        <div className="projectText">
+          <div className="projectName">Jango V1.0</div>
+        </div>
+      </div>
+      <div className="divider" />
+    </div>
   );
 };

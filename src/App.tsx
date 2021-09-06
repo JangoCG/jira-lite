@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import './App.css';
 import { Navigation } from './components/Navigation/Navigation';
-import { Sidebar } from './components/sidebar/Sidebar';
+import { Sidebar } from './components/Sidebar/Sidebar';
 
 function App() {
   return (

@@ -11,7 +11,7 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
     //Navbar
     <div
       className={
-        'z-50 fixed top-0 left-0 overflow-x-hidden h-screen w-16 bg-blue-800 transition-all hover:w-48 group'
+        'z-50 fixed top-0 left-0 overflow-x-hidden h-screen w-16 bg-blue-800 transition-all hover:w-48 group test'
       }
       id={'navbar'}
     >
