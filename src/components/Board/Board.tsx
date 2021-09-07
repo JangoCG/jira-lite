@@ -20,7 +20,7 @@ export const Board: React.FC<BoardProps> = ({}) => {
             </div>
             {/* task */}
             <div className="bg-white h-16 m-1 rounded-sm shadow">
-              <p className="text-sm pb-2">Realy important Issue</p>
+              <p className="text-sm pb-2">Kleine küssen</p>
               <div className="flex ml-3 items-center gap-2">
                 <div className="h-full">
                   <i className="text-red-400 customIcon text-icon h-7">
@@ -30,7 +30,7 @@ export const Board: React.FC<BoardProps> = ({}) => {
                 <div>
                   {/* <p className="text-sm mt-1">3</p> */}
                   <div className="bg-gray-200 w-6 rounded-lg mt-1 h-5">
-                    <p className="text-center text-xs text-black-700 font-bold pt-0.5">2</p>
+                    <p className="text-center text-xs text-black-700 font-bold pt-0.5">13</p>
                   </div>
                 </div>
               </div>
@@ -56,7 +56,7 @@ export const Board: React.FC<BoardProps> = ({}) => {
 
             {/* task */}
             <div className="bg-white h-16 m-1 rounded-sm shadow">
-              <p className="text-sm pb-2">Realy important Issue</p>
+              <p className="text-sm pb-2">Joggen</p>
               <div className="flex ml-3 items-center gap-2">
                 <div className="h-full">
                   <i className="text-red-400 customIcon text-icon h-7">
@@ -66,7 +66,7 @@ export const Board: React.FC<BoardProps> = ({}) => {
                 <div>
                   {/* <p className="text-sm mt-1">3</p> */}
                   <div className="bg-gray-200 w-6 rounded-lg mt-1 h-5">
-                    <p className="text-center text-xs text-black-700 font-bold pt-0.5">2</p>
+                    <p className="text-center text-xs text-black-700 font-bold pt-0.5">7</p>
                   </div>
                 </div>
               </div>
