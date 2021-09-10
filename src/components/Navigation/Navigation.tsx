@@ -1,8 +1,7 @@
 import { faAdjust, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Item, ItemText, NavLeft } from './Styles';
-import './Style.css';
+import './style.css';
 
 interface NavigationProps {}
 

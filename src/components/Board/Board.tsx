@@ -54,6 +54,8 @@ export const Board: React.FC<BoardProps> = ({}) => {
               </div>
             </div>
 
+            <div className="test"></div>
+
             {/* task */}
             <div className="bg-white h-16 m-1 rounded-sm shadow">
               <p className="text-sm pb-2">Joggen</p>
