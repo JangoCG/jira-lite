@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 function App() {
   const mockData = [
-    { id: 'task1', title: 'Joggen' },
+    { id: 'task1', title: 'Feature-1337: Implement Amazing Front End Story Abcdefg' },
     { id: 'task2', title: 'küss kleine' },
     { id: 'task3', title: 'küss kleine nochmal' },
   ];

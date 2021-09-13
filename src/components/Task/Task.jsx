@@ -13,10 +13,10 @@ function Task(props) {
           ref={provided.innerRef}
           className="bg-white h-24 m-1 rounded-sm shadow"
         >
-          <p className="text-sm pb-2">{props.task.title}</p>
-          <div className="flex ml-3 items-center gap-2">
+          <p className="text-sm pb-2 font-sans font-medium text-gray-600">{props.task.title}</p>
+          <div className="flex ml-3 items-center gap-2 mt-1">
             <div className="h-full">
-              <i className="text-red-400 customIcon text-icon h-7">
+              <i className="text-red-400 text-icon">
                 <FontAwesomeIcon icon={faArrowUp} />
               </i>
             </div>
