@@ -70,18 +70,36 @@ function Board(props) {
         break;
     }
 
-    // Destination Logic
-    if (destination.droppableId === 'backlog') {
-      // adds task at index to array
-      backlog.splice(destination.index, 0, itemToAdd);
-    } else {
-      open.splice(destination.index, 0, itemToAdd);
+    // destination logic
+    switch (destination.droppableId) {
+      case BACKLOG:
+        backlog.splice(destination.index, 0, itemToAdd);
+        break;
+      case OPEN:
+        open.splice(destination.index, 0, itemToAdd);
+        break;
+      case IN_PROGRESS:
+        inProgress.splice(destination.index, 0, itemToAdd);
+        break;
+      case DONE:
+        done.splice(destination.index, 0, itemToAdd);
+        break;
     }
+
+    // // Destination Logic
+    // if (destination.droppableId === 'backlog') {
+    //   // adds task at index to array
+    //   backlog.splice(destination.index, 0, itemToAdd);
+    // } else {
+    //   open.splice(destination.index, 0, itemToAdd);
+    // }
 
     console.log('active', backlog);
     console.log('complete', open);
     props.setBacklog(backlog);
     props.setOpen(open);
+    props.setInProgress(inProgress)
+    props.setDone(done)
   };
 
   return (
@@ -94,7 +112,7 @@ function Board(props) {
             {/* colum */}
             <Column title="Backlog" list={props.backlog} id={BACKLOG} />
             <Column title="Open" list={props.open} id={OPEN} />
-            <Column title="In Progress" list={props.done} id={IN_PROGRESS} />
+            <Column title="In Progress" list={props.inProgress} id={IN_PROGRESS} />
             <Column title="Done" list={props.done} id={DONE} />
           </div>
         </div>
