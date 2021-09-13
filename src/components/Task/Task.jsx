@@ -11,7 +11,7 @@ function Task(props) {
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
-          className="bg-white h-20 m-1 rounded-sm shadow"
+          className="bg-white h-24 m-1 rounded-sm shadow"
         >
           <p className="text-sm pb-2">{props.task.title}</p>
           <div className="flex ml-3 items-center gap-2">
