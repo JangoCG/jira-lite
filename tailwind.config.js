@@ -8,6 +8,7 @@ module.exports = {
             fontSize: {
                 icon: '1.2rem',
             },
+            custom: ['Urbanist', ''],
         },
     },
     variants: {
