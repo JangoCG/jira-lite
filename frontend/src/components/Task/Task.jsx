@@ -2,7 +2,7 @@ import React from 'react';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Draggable } from 'react-beautiful-dnd';
-import profileIcon from './placeholder_icon.png'
+import profileIcon from './placeholder_icon.png';
 
 function Task(props) {
   const imageUrl =
