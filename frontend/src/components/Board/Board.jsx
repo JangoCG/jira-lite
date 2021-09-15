@@ -13,8 +13,6 @@ function Board(props) {
   const IN_PROGRESS = 'inProgress';
   const DONE = 'done';
 
-  console.log("board props", props);
-
   const onDragEnd = (result) => {
     console.log('result', result);
     const { source, destination } = result;
@@ -98,8 +96,8 @@ function Board(props) {
     console.log('complete', open);
     props.setBacklog(backlog);
     props.setOpen(open);
-    props.setInProgress(inProgress)
-    props.setDone(done)
+    props.setInProgress(inProgress);
+    props.setDone(done);
   };
 
   return (

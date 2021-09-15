@@ -3,7 +3,8 @@ import './App.css';
 import { Navigation } from './components/Navigation/Navigation';
 import { Sidebar } from './components/Sidebar/Sidebar';
 import Board from './components/Board/Board';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import httpClient from './shared/utils/httpClient';
 
 function App() {
   const mockData = [
@@ -16,6 +17,12 @@ function App() {
   const [open, setOpen] = useState([]);
   const [inProgress, setInProgress] = useState([]);
   const [done, setDone] = useState([]);
+
+  useEffect(() => {
+    // Update the document title using the browser API
+    console.log('app was build');
+    httpClient('get');
+  });
 
   return (
     <>
@@ -30,7 +37,6 @@ function App() {
         setInProgress={setInProgress}
         done={done}
         setDone={setDone}
-
       />
     </>
   );

@@ -12,6 +12,5 @@ import lombok.NoArgsConstructor;
 public class CreateTaskDto {
 
     private String title;
-    private String desc;
-
+    private String content;
 }

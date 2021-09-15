@@ -1,52 +1,42 @@
 package com.jango.backend.controller;
 
 import com.jango.backend.model.dto.CreateTaskDto;
-
 import com.jango.backend.model.entity.Task;
-import com.jango.backend.repository.TaskRepository;
 import com.jango.backend.service.TaskService;
 import lombok.AllArgsConstructor;
-
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/task")
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class TaskController {
 
     private final TaskService taskService;
 
     @GetMapping
     public List<Task> getAllTasks() {
-        List<Task> taskList = new ArrayList<>();
-        Task task1 = Task.builder().id(1).content("dummy content").title("Kleine küssen").build();
-        Task task2 = Task.builder().id(2).content("dummy content").title("Joggen ehen").build();
-        Task task3 = Task.builder().id(3).content("dummy content").title("Einkaufen").build();
-        Task task4 = Task.builder().id(4).content("dummy content").title("Nest JS lernen").build();
+//        List<Task> taskList = new ArrayList<>();
+//        Task task1 = Task.builder().id(1).content("dummy content").title("Kleine küssen").build();
+//        Task task2 = Task.builder().id(2).content("dummy content").title("Joggen ehen").build();
+//        Task task3 = Task.builder().id(3).content("dummy content").title("Einkaufen").build();
+//        Task task4 = Task.builder().id(4).content("dummy content").title("Nest JS lernen").build();
+//
+//
+//        taskList.add(task1);
+//        taskList.add(task2);
+//        taskList.add(task3);
+//        taskList.add(task4);
+        System.out.println("get all tasks called");
 
-
-        taskList.add(task1);
-        taskList.add(task2);
-        taskList.add(task3);
-        taskList.add(task4);
-        return taskList;
+        return taskService.getAllTasks();
     }
-
-
 
     @PostMapping
     public Task createTask(@RequestBody CreateTaskDto createTaskDto) {
-        System.out.println(createTaskDto.getDesc());
-        System.out.println(createTaskDto.getTitle());
-
-        Task task = Task.builder().title(createTaskDto.getTitle()).build();
-
-        taskService.saveTask(task);
-
-        return task;
+        return taskService.createTask(createTaskDto);
     }
 
 //    @GetMapping("/test")
