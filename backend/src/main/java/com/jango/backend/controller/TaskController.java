@@ -11,26 +11,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/task")
 @AllArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 public class TaskController {
 
     private final TaskService taskService;
 
     @GetMapping
     public List<Task> getAllTasks() {
-//        List<Task> taskList = new ArrayList<>();
-//        Task task1 = Task.builder().id(1).content("dummy content").title("Kleine küssen").build();
-//        Task task2 = Task.builder().id(2).content("dummy content").title("Joggen ehen").build();
-//        Task task3 = Task.builder().id(3).content("dummy content").title("Einkaufen").build();
-//        Task task4 = Task.builder().id(4).content("dummy content").title("Nest JS lernen").build();
-//
-//
-//        taskList.add(task1);
-//        taskList.add(task2);
-//        taskList.add(task3);
-//        taskList.add(task4);
-        System.out.println("get all tasks called");
-
         return taskService.getAllTasks();
     }
 
