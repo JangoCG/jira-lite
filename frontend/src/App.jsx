@@ -5,6 +5,7 @@ import { Sidebar } from './components/Sidebar/Sidebar';
 import Board from './components/Board/Board';
 import { useState, useEffect } from 'react';
 import httpClient from './shared/utils/httpClient';
+import { HttpMethods } from './shared/utils/constants/HttpMethods';
 
 function App() {
   const mockData = [
@@ -19,10 +20,12 @@ function App() {
   const [done, setDone] = useState([]);
 
   useEffect(() => {
-    // Update the document title using the browser API
-    console.log('app was build');
-    httpClient('get');
-  });
+    async function fetchData() {
+      const res = await httpClient(HttpMethods.GET, '/v1/task');
+      setBacklog(res);
+    }
+    fetchData();
+  }, []);
 
   return (
     <>
