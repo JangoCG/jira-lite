@@ -3,9 +3,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import './style.css';
 
-interface NavigationProps {}
+interface NavigationProps {
+  showModal: boolean;
+  setShowModal: any;
+}
 
-export const Navigation: React.FC<NavigationProps> = ({}) => {
+export const Navigation: React.FC<NavigationProps> = ({ showModal, setShowModal }) => {
+  function cengizTestFunc() {
+    console.log('button clicked!');
+  }
+  // console.log(showModal);
   return (
     //Navbar
     <div
@@ -31,7 +38,7 @@ export const Navigation: React.FC<NavigationProps> = ({}) => {
         <aside className="navbarText">Search Issue</aside>
       </div>
 
-      <div className="navbarItem">
+      <div className="navbarItem" onClick={() => setShowModal(!showModal)}>
         <i className="navbarItemIcon">
           <FontAwesomeIcon icon={faPlus} />
         </i>

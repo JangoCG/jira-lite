@@ -6,18 +6,15 @@ import Board from './components/Board/Board';
 import { useState, useEffect } from 'react';
 import httpClient from './shared/utils/httpClient';
 import { HttpMethods } from './shared/utils/constants/HttpMethods';
+import Modal from './components/Modal/Modal';
 
 function App() {
-  const mockData = [
-    { id: 'task1', title: 'Feature-1337: Implement Amazing Front End Story Abcdefg' },
-    { id: 'task2', title: 'küss kleine' },
-    { id: 'task3', title: 'küss kleine nochmal' },
-  ];
 
-  const [backlog, setBacklog] = useState(mockData);
+  const [backlog, setBacklog] = useState([]);
   const [open, setOpen] = useState([]);
   const [inProgress, setInProgress] = useState([]);
   const [done, setDone] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -25,12 +22,12 @@ function App() {
       setBacklog(res);
     }
     fetchData();
-  }, []);
+  }, [showModal]);
 
   return (
     <>
-      <Navigation />
-      <Sidebar />
+      <Navigation showModal={showModal} setShowModal={setShowModal} />
+      <Sidebar/>
       <Board
         backlog={backlog}
         setBacklog={setBacklog}
@@ -41,6 +38,8 @@ function App() {
         done={done}
         setDone={setDone}
       />
+      {showModal && <Modal setShowModal={setShowModal}/>}
+
     </>
   );
 }
