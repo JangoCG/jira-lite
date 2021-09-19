@@ -1,14 +1,15 @@
 import React from 'react';
 import './Style.css';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import httpClient from '../../shared/utils/httpClient';
+import { HttpMethods } from '../../shared/utils/constants/HttpMethods';
+import { Button } from '@chakra-ui/react';
+import { useToast } from "@chakra-ui/react"
 
 function Modal(props) {
   console.log('Modal:', props.showModal);
   const { setShowModal } = props;
-
-  const onCreate = () => {
-    console.log('on create called');
-  };
+  const toast = useToast()
   return (
     <div
       className='modalContainer'>
@@ -21,28 +22,33 @@ function Modal(props) {
         </div>
 
         <Formik
-          initialValues={{ title: '', description: '' }}
+          initialValues={{ title: '', content: '' }}
           validate={values => {
             const errors = {};
             if (!values.title) {
               errors.title = 'Required';
-              //    TODO: Implement this
-            // } else if (
-            //   !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.title)
-            // ) {
-            //   errors.title = 'Invalid Title';
              }
-            if (!values.description) {
-              errors.description = 'Required';
+            if (!values.content) {
+              errors.content = 'Required';
             }
             return errors;
           }}
-          onSubmit={(values, { setSubmitting }) => {
-            console.log(values);
+          onSubmit={async (values, { setSubmitting }) => {
+            const res =  await httpClient(HttpMethods.POST, "/v1/task", values);
+            console.log("res is",res);
+            toast({
+              title: "Issue created",
+              description: "Your issue was created",
+              status: "success",
+              duration: 6000,
+              isClosable: true,
+            })
             setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
+              // setShowModal(false);
+              // alert(JSON.stringify(values, null, 2));
               setSubmitting(false);
-            }, 400);
+
+            }, 4000);
           }}
         >
           {({ isSubmitting }) => (
@@ -56,19 +62,16 @@ function Modal(props) {
               {/*Input Text Area*/}
               <div className='flex flex-col px-10 py-5'>
                 <p className='mb-2 font-semibold text-gray-700'>Description</p>
-                <Field as='textarea' type='text' name='description' className='textArea' />
-                <ErrorMessage name='description' component='div' />
+                <Field as='textarea' type='text' name='content' className='textArea' />
+                <ErrorMessage name='content' component='div' />
               </div>
               <div
                 className='flex flex-row items-center justify-between p-5 bg-white border-t border-gray-200 rounded-bl-lg rounded-br-lg'
               >
-                <button className='px-4 py-2 text-white font-semibold bg-red-500 rounded w-24'
-                        onClick={() => setShowModal(false)}>
-                  Cancel
-                </button>
-                <button type='submit' disabled={isSubmitting} className='px-4 py-2 text-white font-semibold bg-blue-700 rounded w-24'>
+                <Button colorScheme="red" size="md" onClick={() => setShowModal(false)}>Cancel</Button>
+                <Button colorScheme="green" type='submit' disabled={isSubmitting}>
                   Create
-                </button>
+                </Button>
               </div>
             </Form>
           )}

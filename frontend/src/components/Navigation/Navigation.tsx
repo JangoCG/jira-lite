@@ -9,9 +9,7 @@ interface NavigationProps {
 }
 
 export const Navigation: React.FC<NavigationProps> = ({ showModal, setShowModal }) => {
-  function cengizTestFunc() {
-    console.log('button clicked!');
-  }
+
   // console.log(showModal);
   return (
     //Navbar
@@ -38,7 +36,7 @@ export const Navigation: React.FC<NavigationProps> = ({ showModal, setShowModal 
         <aside className="navbarText">Search Issue</aside>
       </div>
 
-      <div className="navbarItem" onClick={() => setShowModal(!showModal)}>
+      <div className="navbarItem" onClick={() => setShowModal(true)}>
         <i className="navbarItemIcon">
           <FontAwesomeIcon icon={faPlus} />
         </i>
