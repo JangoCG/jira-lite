@@ -43,6 +43,7 @@ function Modal(props) {
               duration: 6000,
               isClosable: true,
             })
+            setShowModal(false);
             setTimeout(() => {
               // setShowModal(false);
               // alert(JSON.stringify(values, null, 2));
