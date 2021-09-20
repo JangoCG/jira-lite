@@ -6,6 +6,7 @@ import React from 'react';
 import './Style.css';
 import Task from '../Task/Task';
 import Column from '../Column/Column';
+import Header from '../Header/Header';
 
 function Board(props) {
   const BACKLOG = 'backlog';
@@ -66,6 +67,8 @@ function Board(props) {
         itemToAdd = done[source.index];
         done.splice(source.index, 1);
         break;
+      default:
+        console.log('err default case');
     }
 
     // destination logic
@@ -82,6 +85,8 @@ function Board(props) {
       case DONE:
         done.splice(destination.index, 0, itemToAdd);
         break;
+        default:
+          console.log("err default");
     }
 
     // // Destination Logic
@@ -104,9 +109,9 @@ function Board(props) {
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="contentContainer ml-72">
         <div className=" flexContainer flex flex-col">
-          <div className="bg-red-400 w-full">Header</div>
+          <Header />
           {/* Inner Flex Container */}
-          <div className="flex  mt-24 ml-12 mr-12 gap-3">
+          <div className="flex  mt-8 ml-12 mr-12 gap-3">
             {/* colum */}
             <Column title="Backlog" list={props.backlog} id={BACKLOG} />
             <Column title="Open" list={props.open} id={OPEN} />

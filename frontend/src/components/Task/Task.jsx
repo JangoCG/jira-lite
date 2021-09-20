@@ -1,18 +1,11 @@
-import {
-  Avatar,
-  Box,
-  Flex,
-  Tag,
-  Text,
-  VStack,
-  HStack,
-  Kbd,
-  InfoOutlineIcon,
-} from '@chakra-ui/react';
 import { TriangleUpIcon } from '@chakra-ui/icons';
+import {
+  Avatar, Flex, Kbd, Text
+} from '@chakra-ui/react';
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import profileIcon from './placeholder_icon.png';
+
 function Task(props) {
   return (
     <Draggable draggableId={props.task.id.toString()} index={props.index}>
@@ -37,7 +30,7 @@ function Task(props) {
           <Text fontSize="md" fontWeight="medium" textAlign="left" mb="3">
             {props.task.title}
           </Text>
-          <Flex mt="auto" pb="2" pl="2" pr="2" css={{ gap: '5px' }}>
+          <Flex mt="auto" pb="2" pl="2" pr="2" sx={{ gap: '5px' }}>
             <TriangleUpIcon mt="1.5" color="green" />
 
             <span>
