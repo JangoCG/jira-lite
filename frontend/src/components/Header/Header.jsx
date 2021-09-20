@@ -1,7 +1,7 @@
 import { Avatar, AvatarGroup } from '@chakra-ui/avatar';
 import { Button } from '@chakra-ui/button';
 import { Input, InputGroup, InputLeftElement } from '@chakra-ui/input';
-import { Box, Flex, Text, Wrap, WrapItem } from '@chakra-ui/layout';
+import { Box, Flex, Stack, Text } from '@chakra-ui/layout';
 import React from 'react';
 import { AiOutlineGithub, AiOutlineSearch } from 'react-icons/ai';
 import Path from './Path';
@@ -32,7 +32,7 @@ function Header() {
             <Input type="text" placeholder="Enter Search term" />
           </InputGroup>
         </Box>
-        <Box ml='3'>
+        <Box ml="3">
           <AvatarGroup size="md" max={2}>
             <Avatar name="Ryan Florence" src={profileIcon1} />
             <Avatar name="Segun Adebayo" src={profileIcon2} />
@@ -40,6 +40,12 @@ function Header() {
             <Avatar name="Segun Adebayo" src={profileIcon2} />
           </AvatarGroup>
         </Box>
+        <Stack ml='4' spacing={4} direction="row" align="center">
+       
+          <Button colorScheme="gray" variant='outline' size="md">
+            Only my issues
+          </Button>
+        </Stack>
       </Flex>
     </>
   );
